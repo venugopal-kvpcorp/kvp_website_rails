@@ -1,0 +1,51 @@
+<% content_for :body_content_title do %>
+  <%= @person.name %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Name</h1>
+    <p>
+      <%=raw @person.name %>
+    </p>
+  </section>
+  <section>
+    <h1>Designation</h1>
+    <p>
+      <%=raw @person.designation %>
+    </p>
+  </section>
+  <section>
+    <h1>Qualification</h1>
+    <p>
+      <%=raw @person.qualification %>
+    </p>
+  </section>
+  <section>
+    <h1>Image</h1>
+    <p>
+      <%= image_fu @person.image, nil %>
+    </p>
+  </section>
+  <section>
+    <h1>Description</h1>
+    <p>
+      <%=raw @person.description %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="people">
+      <% @people.each do |person| %>
+        <li>
+          <%= link_to person.name, refinery.people_person_path(person) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

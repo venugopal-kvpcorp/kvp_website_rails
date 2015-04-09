@@ -1,0 +1,33 @@
+tr:
+  refinery:
+    plugins:
+      media:
+        title: Media
+    media:
+      admin:
+        media:
+          actions:
+            create_new: Yeni Ekle Medium
+            reorder: Tekrar sirala Media
+            reorder_done: Tekrar siralama tamamlandiMedia
+          records:
+            title: Media
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Media yok henuz.  Tikla "Yeni Ekle Medium" eklemek senin ilk medium.
+          medium:
+            view_live_html: Bunu canlu medium goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle medium
+            delete: Bunu Sil medium sonsuza dek
+      media:
+        show:
+          other: Diger Media
+  activerecord:
+    attributes:
+      'refinery/media/medium':
+        title: Title
+        tags: Tags
+        published_at: Published At
+        description: Description
+        link: Link
+        logo: Logo
+        additional_image: Additional Image

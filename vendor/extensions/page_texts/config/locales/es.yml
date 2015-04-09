@@ -1,0 +1,30 @@
+es:
+  refinery:
+    plugins:
+      page_texts:
+        title: Page Texts
+#        article: masculino/femenino
+    page_texts:
+      admin:
+        page_texts:
+          actions:
+            create_new: Crear nuevo page text
+            reorder: Reordenar page texts
+            reorder_done: Reordenación de page texts completada
+          records:
+            title: Page Texts
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay page texts todavía. Pulsa en "Crear nuevo Page Text" para crear tu primer page text.
+          page_text:
+            view_live_html: Ver este page text como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este page text
+            delete: Borrar este page text para siempre
+      page_texts:
+        show:
+          other: Otros page texts
+  activerecord:
+    attributes:
+      'refinery/page_texts/page_text':
+        key: Key
+        value: Value
+        page: Page

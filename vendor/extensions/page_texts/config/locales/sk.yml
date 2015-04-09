@@ -1,0 +1,29 @@
+sk:
+  refinery:
+    plugins:
+      page_texts:
+        title: Page Texts
+    page_texts:
+      admin:
+        page_texts:
+          actions:
+            create_new: Pridať Page Text
+            reorder: Preusporiadať Page Texts
+            reorder_done: Koniec radenia Page Texts
+          records:
+            title: Page Texts
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Page Texts. Kliknite na "Pridať Page Text" pre pridanie prvého page text.
+          page_text:
+            view_live_html: Zobraziť náhľad page text<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť page text
+            delete: Zmazať page text
+      page_texts:
+        show:
+          other: Daľšie Page Texts
+  activerecord:
+    attributes:
+      'refinery/page_texts/page_text':
+        key: Key
+        value: Value
+        page: Page

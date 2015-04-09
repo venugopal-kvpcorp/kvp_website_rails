@@ -1,0 +1,29 @@
+en:
+  refinery:
+    plugins:
+      qas:
+        title: Qas
+    qas:
+      admin:
+        qas:
+          actions:
+            create_new: Add New Qa
+            reorder: Reorder Qas
+            reorder_done: Done Reordering Qas
+          records:
+            title: Qas
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Qas yet. Click "Add New Qa" to add your first qa.
+          qa:
+            view_live_html: View this qa live <br/><em>(opens in a new window)</em>
+            edit: Edit this qa
+            delete: Remove this qa forever
+      qas:
+        show:
+          other: Other Qas
+  activerecord:
+    attributes:
+      'refinery/qas/qa':
+        question: Question
+        answer: Answer
+        page_text: Page Text

@@ -1,0 +1,46 @@
+<%= form_for [refinery, :press_releases_admin, @press_release] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @press_release,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title, :class => 'larger widest' -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :published_place -%>
+    <%= f.text_field :published_place -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :published_date -%>
+    <%= f.date_select :published_date -%>
+  </div>
+
+  <div class='field'>
+    <%= render '/refinery/admin/wysiwyg',
+                :f => f,
+                :fields => [:content],
+                :object => "press_releases/press_release" -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :link -%>
+    <%= f.text_field :link, :class => 'larger widest' -%>
+  </div>
+
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.press_releases.admin.press_releases.press_release'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @press_release.title) -%>
+<% end -%>
+
+<% content_for :javascripts do -%>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end -%>

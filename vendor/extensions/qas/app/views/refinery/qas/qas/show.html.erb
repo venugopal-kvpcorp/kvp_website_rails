@@ -1,0 +1,39 @@
+<% content_for :body_content_title do %>
+  <%= @qa.faq.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Question</h1>
+    <p>
+      <%=raw @qa.question %>
+    </p>
+  </section>
+  <section>
+    <h1>Answer</h1>
+    <p>
+      <%=raw @qa.answer %>
+    </p>
+  </section>
+  <section>
+    <h1>Page Text</h1>
+    <p>
+      <%=raw @qa.faq.title %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="qas">
+      <% @qas.each do |qa| %>
+        <li>
+          <%= link_to qa.faq.title, refinery.qas_qa_path(qa) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

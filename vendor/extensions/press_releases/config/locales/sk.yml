@@ -1,0 +1,30 @@
+sk:
+  refinery:
+    plugins:
+      press_releases:
+        title: Press Releases
+    press_releases:
+      admin:
+        press_releases:
+          actions:
+            create_new: Pridať Press Release
+            reorder: Preusporiadať Press Releases
+            reorder_done: Koniec radenia Press Releases
+          records:
+            title: Press Releases
+            sorry_no_results: Ľutujeme, ale neboli nájdené žiadne výsledky.
+            no_items_yet: Nie sú vytvorené žiadne Press Releases. Kliknite na "Pridať Press Release" pre pridanie prvého press release.
+          press_release:
+            view_live_html: Zobraziť náhľad press release<br/><em>(otvorí sa v novom okne)</em>
+            edit: Upraviť press release
+            delete: Zmazať press release
+      press_releases:
+        show:
+          other: Daľšie Press Releases
+  activerecord:
+    attributes:
+      'refinery/press_releases/press_release':
+        title: Title
+        published_at: Published At
+        content: Content
+        link: Link

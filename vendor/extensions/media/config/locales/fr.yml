@@ -1,0 +1,33 @@
+fr:
+  refinery:
+    plugins:
+      media:
+        title: Media
+    media:
+      admin:
+        media:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Medium
+            reorder: Réordonner les Media
+            reorder_done: Fin de réordonnancement des Media
+          records:
+            title: Media
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Medium. Cliquer sur "Créer un(e) nouve(au/l/lle) Medium" pour créer votre premi(er/ère) medium.'
+          medium:
+            view_live_html: Voir ce(t/tte) medium <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) medium
+            delete: Supprimer définitivement ce(t/tte) medium
+      media:
+        show:
+          other: Autres Media
+  activerecord:
+    attributes:
+      'refinery/media/medium':
+        title: Title
+        tags: Tags
+        published_at: Published At
+        description: Description
+        link: Link
+        logo: Logo
+        additional_image: Additional Image

@@ -1,0 +1,30 @@
+nb:
+  refinery:
+    plugins:
+      press_releases:
+        title: Press Releases
+    press_releases:
+      admin:
+        press_releases:
+          actions:
+            create_new: Lag en ny Press Release
+            reorder: Endre rekkefølgen på Press Releases
+            reorder_done: Ferdig å endre rekkefølgen Press Releases
+          records:
+            title: Press Releases
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Press Releases enda. Klikk på "Lag en ny Press Release" for å legge til din første press release.
+          press_release:
+            view_live_html: Vis hvordan denne press release ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne press release
+            delete: Fjern denne press release permanent
+      press_releases:
+        show:
+          other: Andre Press Releases
+  activerecord:
+    attributes:
+      'refinery/press_releases/press_release':
+        title: Title
+        published_at: Published At
+        content: Content
+        link: Link

@@ -1,0 +1,29 @@
+nl:
+  refinery:
+    plugins:
+      qas:
+        title: Qas
+    qas:
+      admin:
+        qas:
+          actions:
+            create_new: Nieuwe Qa toevoegen
+            reorder: De volgorde van de Qas wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Qa-volgorde
+          records:
+            title: Qas
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Qas. Druk op 'Nieuwe Qa toevoegen' om de eerste toe te voegen.
+          qa:
+            view_live_html: Deze qa op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze qa
+            delete: Deze qa definitief verwijderen
+      qas:
+        show:
+          other: Andere Qas
+  activerecord:
+    attributes:
+      'refinery/qas/qa':
+        question: Question
+        answer: Answer
+        page_text: Page Text

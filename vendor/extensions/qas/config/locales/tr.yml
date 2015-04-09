@@ -1,0 +1,29 @@
+tr:
+  refinery:
+    plugins:
+      qas:
+        title: Qas
+    qas:
+      admin:
+        qas:
+          actions:
+            create_new: Yeni Ekle Qa
+            reorder: Tekrar sirala Qas
+            reorder_done: Tekrar siralama tamamlandiQas
+          records:
+            title: Qas
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Qas yok henuz.  Tikla "Yeni Ekle Qa" eklemek senin ilk qa.
+          qa:
+            view_live_html: Bunu canlu qa goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle qa
+            delete: Bunu Sil qa sonsuza dek
+      qas:
+        show:
+          other: Diger Qas
+  activerecord:
+    attributes:
+      'refinery/qas/qa':
+        question: Question
+        answer: Answer
+        page_text: Page Text

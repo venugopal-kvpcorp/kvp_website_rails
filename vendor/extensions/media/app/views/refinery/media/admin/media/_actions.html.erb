@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::Media::Admin::MediaController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.media_admin_media_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_media_admin_medium_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::Media::Admin::MediaController.sortable? && ::Refinery::Media::Medium.many? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Media"),
+                 refinery.media_admin_media_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Media"),
+                 refinery.media_admin_media_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

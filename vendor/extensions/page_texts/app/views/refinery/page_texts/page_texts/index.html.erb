@@ -1,0 +1,11 @@
+<% content_for :body do %>
+  <ul id="page_texts">
+    <% @page_texts.each do |page_text| %>
+      <li>
+        <%= link_to page_text.key, refinery.page_texts_page_text_path(page_text) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render '/refinery/content_page' %>

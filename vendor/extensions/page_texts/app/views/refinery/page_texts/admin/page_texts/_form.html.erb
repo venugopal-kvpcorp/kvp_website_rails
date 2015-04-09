@@ -1,0 +1,41 @@
+<%= form_for [refinery, :page_texts_admin, @page_text] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @page_text,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :key -%>
+    <%= f.text_field :key -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title -%>
+  </div>
+
+
+  <div class='field'>
+    <%= render '/refinery/admin/wysiwyg',
+                :f => f,
+                :fields => [:value],
+                :object => "media/medium" -%>
+  </div>
+
+  <div class='field'>
+    <%= f.label :page -%>
+    <%= f.text_field :page -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.page_texts.admin.page_texts.page_text'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @page_text.key) -%>
+<% end -%>
+
+<% content_for :javascripts do -%>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end -%>

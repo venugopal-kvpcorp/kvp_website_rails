@@ -1,0 +1,33 @@
+it:
+  refinery:
+    plugins:
+      media:
+        title: Media
+    media:
+      admin:
+        media:
+          actions:
+            create_new: Aggiungi Nuovo Medium
+            reorder: Riordina Media
+            reorder_done: Termina il Riordino di Media
+          records:
+            title: Media
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Media. Clicca "Aggiungi Nuovo Medium" per aggiungere il tuo primo medium.
+          medium:
+            view_live_html: Guarda live questo medium <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo medium
+            delete: Rimuovi per sempre questo medium
+      media:
+        show:
+          other: Altri Media
+  activerecord:
+    attributes:
+      'refinery/media/medium':
+        title: Title
+        tags: Tags
+        published_at: Published At
+        description: Description
+        link: Link
+        logo: Logo
+        additional_image: Additional Image

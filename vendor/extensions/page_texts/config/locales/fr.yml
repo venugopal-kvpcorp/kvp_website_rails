@@ -1,0 +1,29 @@
+fr:
+  refinery:
+    plugins:
+      page_texts:
+        title: Page Texts
+    page_texts:
+      admin:
+        page_texts:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Page Text
+            reorder: Réordonner les Page Texts
+            reorder_done: Fin de réordonnancement des Page Texts
+          records:
+            title: Page Texts
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Page Text. Cliquer sur "Créer un(e) nouve(au/l/lle) Page Text" pour créer votre premi(er/ère) page text.'
+          page_text:
+            view_live_html: Voir ce(t/tte) page text <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) page text
+            delete: Supprimer définitivement ce(t/tte) page text
+      page_texts:
+        show:
+          other: Autres Page Texts
+  activerecord:
+    attributes:
+      'refinery/page_texts/page_text':
+        key: Key
+        value: Value
+        page: Page

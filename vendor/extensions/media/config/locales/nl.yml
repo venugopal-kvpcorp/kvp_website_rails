@@ -1,0 +1,33 @@
+nl:
+  refinery:
+    plugins:
+      media:
+        title: Media
+    media:
+      admin:
+        media:
+          actions:
+            create_new: Nieuwe Medium toevoegen
+            reorder: De volgorde van de Media wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Medium-volgorde
+          records:
+            title: Media
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Media. Druk op 'Nieuwe Medium toevoegen' om de eerste toe te voegen.
+          medium:
+            view_live_html: Deze medium op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze medium
+            delete: Deze medium definitief verwijderen
+      media:
+        show:
+          other: Andere Media
+  activerecord:
+    attributes:
+      'refinery/media/medium':
+        title: Title
+        tags: Tags
+        published_at: Published At
+        description: Description
+        link: Link
+        logo: Logo
+        additional_image: Additional Image

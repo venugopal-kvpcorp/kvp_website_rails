@@ -1,0 +1,30 @@
+en:
+  refinery:
+    plugins:
+      press_releases:
+        title: Press Releases
+    press_releases:
+      admin:
+        press_releases:
+          actions:
+            create_new: Add New Press Release
+            reorder: Reorder Press Releases
+            reorder_done: Done Reordering Press Releases
+          records:
+            title: Press Releases
+            sorry_no_results: Sorry! There are no results found.
+            no_items_yet: There are no Press Releases yet. Click "Add New Press Release" to add your first press release.
+          press_release:
+            view_live_html: View this press release live <br/><em>(opens in a new window)</em>
+            edit: Edit this press release
+            delete: Remove this press release forever
+      press_releases:
+        show:
+          other: Other Press Releases
+  activerecord:
+    attributes:
+      'refinery/press_releases/press_release':
+        title: Title
+        published_at: Published At
+        content: Content
+        link: Link

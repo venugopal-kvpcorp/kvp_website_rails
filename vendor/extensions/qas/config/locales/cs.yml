@@ -1,0 +1,29 @@
+cs:
+  refinery:
+    plugins:
+      qas:
+        title: Qas
+    qas:
+      admin:
+        qas:
+          actions:
+            create_new: Přidat Qa
+            reorder: Řadit Qas
+            reorder_done: Konec řazení Qas
+          records:
+            title: Qas
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Qas. Zvolte "Přidat Qa" pro přidání prvního qa.
+          qa:
+            view_live_html: Zobrazit náhled qa<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit qa
+            delete: Smazat qa
+      qas:
+        show:
+          other: Další Qas
+  activerecord:
+    attributes:
+      'refinery/qas/qa':
+        question: Question
+        answer: Answer
+        page_text: Page Text

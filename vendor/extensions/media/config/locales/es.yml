@@ -1,0 +1,34 @@
+es:
+  refinery:
+    plugins:
+      media:
+        title: Media
+#        article: masculino/femenino
+    media:
+      admin:
+        media:
+          actions:
+            create_new: Crear nuevo medium
+            reorder: Reordenar media
+            reorder_done: Reordenación de media completada
+          records:
+            title: Media
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay media todavía. Pulsa en "Crear nuevo Medium" para crear tu primer medium.
+          medium:
+            view_live_html: Ver este medium como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este medium
+            delete: Borrar este medium para siempre
+      media:
+        show:
+          other: Otros media
+  activerecord:
+    attributes:
+      'refinery/media/medium':
+        title: Title
+        tags: Tags
+        published_at: Published At
+        description: Description
+        link: Link
+        logo: Logo
+        additional_image: Additional Image

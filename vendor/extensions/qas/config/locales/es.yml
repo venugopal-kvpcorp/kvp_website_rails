@@ -1,0 +1,30 @@
+es:
+  refinery:
+    plugins:
+      qas:
+        title: Qas
+#        article: masculino/femenino
+    qas:
+      admin:
+        qas:
+          actions:
+            create_new: Crear nuevo qa
+            reorder: Reordenar qas
+            reorder_done: Reordenación de qas completada
+          records:
+            title: Qas
+            sorry_no_results: Lo siento, no hay resultados
+            no_items_yet: No hay qas todavía. Pulsa en "Crear nuevo Qa" para crear tu primer qa.
+          qa:
+            view_live_html: Ver este qa como abierto al público <br/><em>(abre en ventana nueva)</em>
+            edit: Editar este qa
+            delete: Borrar este qa para siempre
+      qas:
+        show:
+          other: Otros qas
+  activerecord:
+    attributes:
+      'refinery/qas/qa':
+        question: Question
+        answer: Answer
+        page_text: Page Text

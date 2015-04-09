@@ -1,0 +1,31 @@
+zh-CN:
+  refinery:
+    plugins:
+      qas:
+        title: Qas
+    qas:
+      admin:
+        qas:
+          actions:
+            create_new: 建立新的 Qa
+            reorder: 对 Qas 重新排序
+            reorder_done: 对 Qas 的重新排序结束
+          records:
+            title: Qas
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Qas yet. Click "Add New Qa" to add your first qa.
+            no_items_yet: 目前没有 Qas . 点击 "Add New Qa" 创建一个qa.
+          qa:
+            view_live_html: 查看 qa 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 qa
+            delete: 永久删除 qa
+      qas:
+        show:
+          other: 其他 Qas
+  activerecord:
+    attributes:
+      'refinery/qas/qa':
+        question: Question
+        answer: Answer
+        page_text: Page Text

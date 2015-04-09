@@ -1,0 +1,63 @@
+<% content_for :body_content_title do %>
+  <%= @medium.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @medium.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Tags</h1>
+    <p>
+      <%=raw @medium.tags %>
+    </p>
+  </section>
+  <section>
+    <h1>Published At</h1>
+    <p>
+      <%=raw @medium.published_at %>
+    </p>
+  </section>
+  <section>
+    <h1>Description</h1>
+    <p>
+      <%=raw @medium.description %>
+    </p>
+  </section>
+  <section>
+    <h1>Link</h1>
+    <p>
+      <%=raw @medium.link %>
+    </p>
+  </section>
+  <section>
+    <h1>Logo</h1>
+    <p>
+      <%= image_fu @medium.logo, nil %>
+    </p>
+  </section>
+  <section>
+    <h1>Additional Image</h1>
+    <p>
+      <%= image_fu @medium.additional_image, nil %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="media">
+      <% @media.each do |medium| %>
+        <li>
+          <%= link_to medium.title, refinery.media_medium_path(medium) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

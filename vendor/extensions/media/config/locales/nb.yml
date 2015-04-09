@@ -1,0 +1,33 @@
+nb:
+  refinery:
+    plugins:
+      media:
+        title: Media
+    media:
+      admin:
+        media:
+          actions:
+            create_new: Lag en ny Medium
+            reorder: Endre rekkefølgen på Media
+            reorder_done: Ferdig å endre rekkefølgen Media
+          records:
+            title: Media
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Media enda. Klikk på "Lag en ny Medium" for å legge til din første medium.
+          medium:
+            view_live_html: Vis hvordan denne medium ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne medium
+            delete: Fjern denne medium permanent
+      media:
+        show:
+          other: Andre Media
+  activerecord:
+    attributes:
+      'refinery/media/medium':
+        title: Title
+        tags: Tags
+        published_at: Published At
+        description: Description
+        link: Link
+        logo: Logo
+        additional_image: Additional Image

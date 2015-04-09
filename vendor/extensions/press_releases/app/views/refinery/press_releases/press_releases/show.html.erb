@@ -1,0 +1,45 @@
+<% content_for :body_content_title do %>
+  <%= @press_release.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @press_release.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Published At</h1>
+    <p>
+      <%=raw @press_release.published_place %> <% @press_release.published_date %>
+    </p>
+  </section>
+  <section>
+    <h1>Content</h1>
+    <p>
+      <%=raw @press_release.content %>
+    </p>
+  </section>
+  <section>
+    <h1>Link</h1>
+    <p>
+      <%=raw @press_release.link %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="press_releases">
+      <% @press_releases.each do |press_release| %>
+        <li>
+          <%= link_to press_release.title, refinery.press_releases_press_release_path(press_release) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

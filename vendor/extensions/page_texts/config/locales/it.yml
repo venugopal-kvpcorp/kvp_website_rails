@@ -1,0 +1,29 @@
+it:
+  refinery:
+    plugins:
+      page_texts:
+        title: Page Texts
+    page_texts:
+      admin:
+        page_texts:
+          actions:
+            create_new: Aggiungi Nuovo Page Text
+            reorder: Riordina Page Texts
+            reorder_done: Termina il Riordino di Page Texts
+          records:
+            title: Page Texts
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Page Texts. Clicca "Aggiungi Nuovo Page Text" per aggiungere il tuo primo page text.
+          page_text:
+            view_live_html: Guarda live questo page text <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo page text
+            delete: Rimuovi per sempre questo page text
+      page_texts:
+        show:
+          other: Altri Page Texts
+  activerecord:
+    attributes:
+      'refinery/page_texts/page_text':
+        key: Key
+        value: Value
+        page: Page

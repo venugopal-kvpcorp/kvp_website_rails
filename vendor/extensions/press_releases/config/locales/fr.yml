@@ -1,0 +1,30 @@
+fr:
+  refinery:
+    plugins:
+      press_releases:
+        title: Press Releases
+    press_releases:
+      admin:
+        press_releases:
+          actions:
+            create_new: Créer un(e) nouve(au/l/lle) Press Release
+            reorder: Réordonner les Press Releases
+            reorder_done: Fin de réordonnancement des Press Releases
+          records:
+            title: Press Releases
+            sorry_no_results: "Désolé ! Aucun résultat."
+            no_items_yet: 'Il n''y a actuellement aucun(e) Press Release. Cliquer sur "Créer un(e) nouve(au/l/lle) Press Release" pour créer votre premi(er/ère) press release.'
+          press_release:
+            view_live_html: Voir ce(t/tte) press release <br/><em>(Ouvre une nouvelle fenêtre)</em>
+            edit: Modifier ce(t/tte) press release
+            delete: Supprimer définitivement ce(t/tte) press release
+      press_releases:
+        show:
+          other: Autres Press Releases
+  activerecord:
+    attributes:
+      'refinery/press_releases/press_release':
+        title: Title
+        published_at: Published At
+        content: Content
+        link: Link

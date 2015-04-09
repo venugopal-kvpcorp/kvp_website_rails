@@ -1,0 +1,38 @@
+<ul>
+  <% if ::Refinery::Qas::Admin::QasController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.qas_admin_qas_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_qas_admin_qa_path,
+                 :class => "add_icon" %>
+  </li>
+
+  <li>
+    <% faqs = Refinery::Page.get_faq_pages %>
+    <%= label_tag :FAQ -%>
+    <form action="/refinery/qas", method="get">
+      <%= select_tag "filter", 
+      options_for_select(faqs.map {|faq| [faq.title, faq.id]}.prepend(["All", "all"]), params[:filter] || "all"), 
+      :id => "filter-faq",
+      :onchange => "this.form.submit()"
+      %>
+    </form>
+  </li>
+
+<% if !searching? && ::Refinery::Qas::Admin::QasController.sortable? && ::Refinery::Qas::Qa.many? && params[:filter] && params[:filter] != "all" %>
+  <li>
+    <%= link_to t('.reorder', :what => "Qas"),
+                 refinery.qas_admin_qas_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Qas"),
+                 refinery.qas_admin_qas_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

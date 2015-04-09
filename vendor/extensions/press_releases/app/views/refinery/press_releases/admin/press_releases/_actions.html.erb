@@ -1,0 +1,25 @@
+<ul>
+  <% if ::Refinery::PressReleases::Admin::PressReleasesController.searchable? %>
+    <li>
+      <%= render '/refinery/admin/search', :url => refinery.press_releases_admin_press_releases_path %>
+    </li>
+  <% end %>
+  <li>
+    <%= link_to t('.create_new'), refinery.new_press_releases_admin_press_release_path,
+                 :class => "add_icon" %>
+  </li>
+<% if !searching? && ::Refinery::PressReleases::Admin::PressReleasesController.sortable? && ::Refinery::PressReleases::PressRelease.many? %>
+  <li>
+    <%= link_to t('.reorder', :what => "Press Releases"),
+                 refinery.press_releases_admin_press_releases_path,
+                 :id => "reorder_action",
+                 :class => "reorder_icon" %>
+
+    <%= link_to t('.reorder_done', :what => "Press Releases"),
+                 refinery.press_releases_admin_press_releases_path,
+                 :id => "reorder_action_done",
+                 :style => "display: none;",
+                 :class => "reorder_icon" %>
+  </li>
+<% end %>
+</ul>

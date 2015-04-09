@@ -1,0 +1,36 @@
+<%= form_for [refinery, :qas_admin, @qa] do |f| -%>
+  <%= render '/refinery/admin/error_messages',
+              :object => @qa,
+              :include_object_name => true %>
+
+  <div class='field'>
+    <%= f.label :question -%>
+    <%= f.text_field :question, :size => "105" -%>
+  </div>      
+
+  <div class='field'>
+    <%= render '/refinery/admin/wysiwyg',
+                :f => f,
+                :fields => [:answer],
+                :object => "qas/qa" -%>
+  </div>
+
+  <div class='field'>
+    <% faqs = Refinery::Page.get_faq_pages %>
+    <%= label_tag :FAQ -%>
+    <%= f.select :page_id,  faqs.collect { | faq | [ faq.title, faq.id ]  } , :selected =>( f.object.page_id || Refinery::Page.find_by_slug('general-and-account-faq').id) -%>
+  </div>
+
+  <%= render '/refinery/admin/form_actions', :f => f,
+             :continue_editing => false,
+             :delete_title => t('delete', :scope => 'refinery.qas.admin.qas.qa'),
+             :delete_confirmation => t('message', :scope => 'refinery.admin.delete', :title => @qa.page_id) -%>
+<% end -%>
+
+<% content_for :javascripts do -%>
+  <script>
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  </script>
+<% end -%>

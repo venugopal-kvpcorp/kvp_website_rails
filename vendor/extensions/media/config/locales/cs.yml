@@ -1,0 +1,33 @@
+cs:
+  refinery:
+    plugins:
+      media:
+        title: Media
+    media:
+      admin:
+        media:
+          actions:
+            create_new: Přidat Medium
+            reorder: Řadit Media
+            reorder_done: Konec řazení Media
+          records:
+            title: Media
+            sorry_no_results: Litujeme, ale nebyly nalezny žádné výsledky.
+            no_items_yet: Zatím nebyly vytvořeny žádné Media. Zvolte "Přidat Medium" pro přidání prvního medium.
+          medium:
+            view_live_html: Zobrazit náhled medium<br/><em>(otevře se v novém okně)</em>
+            edit: Upravit medium
+            delete: Smazat medium
+      media:
+        show:
+          other: Další Media
+  activerecord:
+    attributes:
+      'refinery/media/medium':
+        title: Title
+        tags: Tags
+        published_at: Published At
+        description: Description
+        link: Link
+        logo: Logo
+        additional_image: Additional Image

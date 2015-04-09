@@ -1,0 +1,29 @@
+nb:
+  refinery:
+    plugins:
+      qas:
+        title: Qas
+    qas:
+      admin:
+        qas:
+          actions:
+            create_new: Lag en ny Qa
+            reorder: Endre rekkefølgen på Qas
+            reorder_done: Ferdig å endre rekkefølgen Qas
+          records:
+            title: Qas
+            sorry_no_results: Beklager! Vi fant ikke noen resultater.
+            no_items_yet: Det er ingen Qas enda. Klikk på "Lag en ny Qa" for å legge til din første qa.
+          qa:
+            view_live_html: Vis hvordan denne qa ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+            edit: Rediger denne qa
+            delete: Fjern denne qa permanent
+      qas:
+        show:
+          other: Andre Qas
+  activerecord:
+    attributes:
+      'refinery/qas/qa':
+        question: Question
+        answer: Answer
+        page_text: Page Text
