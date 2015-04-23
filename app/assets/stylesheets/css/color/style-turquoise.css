@@ -12,13 +12,13 @@ a:hover, .avatar li:hover h3, .avatar li:hover p {
 	color: #4bd0ea;
 }
 #search {
-    background-color: rgba(75, 208, 234 0.9);
+    background-color: rgba(75, 208, 234, 0.9);
 }
 .overaly{
-	background-color: rgba(75, 208, 234 0.85);
+	background-color: rgba(75, 208, 234, 0.85);
 }
 .our-banners-description:hover > .our-banners-border {
-	border: 8px solid rgba(75, 208, 234 0.56);
+	border: 8px solid rgba(75, 208, 234, 0.56);
 }
 .button-green {
 	background: #4bd0ea;
