@@ -1,0 +1,12 @@
+<% if object.errors.any? %>
+<div class="errorExplanation" id="errorExplanation">
+  <p class="text-danger">
+  	Please fix the following errors: 
+    <% unless defined?(include_object_name) and include_object_name %>
+      <%= object.errors.full_messages.join(", ") %>
+    <% else %>
+      <%= object.errors.full_messages.join(", ") %>
+    <% end %>
+  </p>
+</div>
+<% end %>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body{
+      padding-top: 20px;
+    }
+  </style>
+  <body class="blog_page">
+    <%= yield :body_analytics_scripts %>
+
+  
+    <main role="main">
+      <div class='main-container'>
+        <%= yield %>
+
+      </div>
+    </main>
+
+  </body>
+</html>

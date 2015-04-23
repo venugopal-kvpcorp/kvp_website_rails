@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-ruby '2.1.1'
 gem 'rails', '3.2.18'
 
 group :development, :test do
@@ -46,7 +45,7 @@ gem 'wkhtmltopdf-binary'
 gem 'wicked_pdf'
 
 group :development do
-	gem 'debugger'
+	# gem 'debugger'
 	gem 'awesome_print'
 	gem 'pry-rails'
 end
@@ -87,3 +86,8 @@ gem 'refinerycms-press_releases', :path => 'vendor/extensions'
 
 gem 'bootstrap-sass', '>= 3.0.0.0'
 gem 'bootstrap-datepicker-rails'
+
+gem "therubyracer"
+gem "less-rails"
+gem "twitter-bootstrap-rails"
+

@@ -1,0 +1,50 @@
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#deleteRejectedCommentsBtn').hide();
+	    $('#selectAllRejectedComments').click(function(event) {
+	        if(this.checked) {
+	            $('.rejectedComment').each(function() {
+	                this.checked = true;
+	            });
+	            $('#deleteRejectedCommentsBtn').show();
+	        }else{
+	            $('.rejectedComment').each(function() {
+	                this.checked = false;
+	            });
+	            $('#deleteRejectedCommentsBtn').hide();
+	        }
+	    });
+
+	    $( "input" ).on( "click", function() {
+		  if($("#sortable_list li input:checkbox:checked").length == 0){
+		  	$('#deleteRejectedCommentsBtn').hide();
+		  	$('#selectAllRejectedComments').prop('checked', false);
+		  }
+		  else{
+		  	$('#deleteRejectedCommentsBtn').show();
+		  	$('#selectAllRejectedComments').prop('checked', true);
+		  }
+		});
+
+	    $("#deleteRejectedCommentsBtn").click(function(event){
+		    event.preventDefault();
+		    var commentIDs = $("#sortable_list li input:checkbox:checked").map(function(){
+		      return $(this).val();
+		    }).get();		    
+		    $.post( "/refinery/blog/comments/mass_delete_comments", {comment_ids: commentIDs}, function( commentIDs ) {
+			  window.location.replace("<%= request.original_url %>");
+			  return false;
+			});
+		});
+	});
+</script>
+
+<ul id='sortable_list'>
+  <span style="margin-left: 5px;">
+    <input type="checkbox" id="selectAllRejectedComments"> Select All
+    <input id="deleteRejectedCommentsBtn" type="submit" value="Delete">
+  </span>  
+  <%= render :partial => 'comment', :collection => @comments %>
+</ul>
+<%= render "/refinery/admin/sortable_list",
+           :continue_reordering => (defined?(continue_reordering) ? continue_reordering : true) %>

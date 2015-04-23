@@ -26,7 +26,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: newtest_refinery_database_development
+  database: newtest_refinery_database_production
   pool: 5
   username: chris
   password: root

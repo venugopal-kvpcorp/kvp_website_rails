@@ -1,0 +1,50 @@
+<section class='row custom-row sub-search-header'>
+  <div class="container">
+    <section class="col-md-12">
+      <%= "Search results for '#{params[:query]}'" %>
+    </section>
+  </div>
+</section>
+
+<div class="container blog-container no-padding">
+  <div class='row row-top-0 blog-content'>
+    <div class="col-md-12 blogs">
+      <section class="row row-top-0">
+        <section class="col-md-12">
+          <% if @results.empty? %>
+            <div class="blog-div" style="padding-bottom: 50px;">
+              <h2>
+                Not Found
+              </h2>
+              <p>
+                You can repeat your search with the following form.
+              </p>
+              <%= form_tag refinery.search_path, :class => "form-inline" do %>
+                <%= text_field_tag :query, "", {
+                                   :type => "search",
+                                   :class => "form-control",
+                                   :placeholder => "Search here",
+                                   :style => "height: 45px;width:90%;"
+                                  } %>
+                <button type="submit" class="btn btn-primary search-button">
+                  SEARCH
+                </button>
+              <% end %>
+            </div>
+          <% else %>
+            <%= render '/blog/addons/highlight_text' if params[:query].present? %>
+            <% @results.each do |result| %>
+              <% @blog_div_set = true %>
+              <div class="blog-div">
+                <div id="show_blog_post">
+                  <%= render '/refinery/blog/shared/post', :post => result, :hide_social_sharing => true %>                  
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </section>
+      </section>
+    </div>
+  </div>
+</div>
+<%#= render "/refinery/content_page" %>

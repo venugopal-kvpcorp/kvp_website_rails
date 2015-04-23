@@ -1,0 +1,17 @@
+<div class="blog-div">
+
+	<h1>Recent Posts</h1>
+
+	<% @posts = Refinery::Blog::Post.order('created_at DESC') %>
+
+	<% if @posts.any? %>
+		<ul>
+			<% @posts.each do | post | %>
+				<li>
+	        <a><%= post.title %> - <%= post.created_at.strftime('%dth %B,%Y') %></a>
+	      </li>
+			<% end %>
+		</ul>
+	<% end %>
+
+</div>

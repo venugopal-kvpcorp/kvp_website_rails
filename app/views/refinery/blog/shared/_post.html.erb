@@ -1,0 +1,77 @@
+<% if (wide rescue false)
+  class_attr1,class_attr2 = "col-md-2 no-padding","col-md-10 pad-left-45" 
+  else
+  class_attr1,class_attr2 = "col-md-4 no-padding", "col-md-8"
+  end %>
+<% if post.live? %>
+  <div>
+    <header>
+      <div class="row row-top-0">
+        <div class="<%= class_attr1 %>">
+          <a href="<%= refinery.blog_post_path(post) %>" class="blog-link">
+            <% if post.image.present? %>
+              <div class="blog-image blog-image-small blog-image-shrink-center" style="background: url('<%= post.image.url %>') no-repeat center bottom;">
+              </div>
+            <% else %>
+              <div class="blog-image blog-image-shrink-center shrink-center">
+                <%= post.title %>
+              </div>
+            <% end %>
+          </a>
+        </div>
+
+        <div class="<%= class_attr2 %>">
+          <a href="<%= refinery.blog_post_path(post) %>" class="blog-link">
+            <h1 class="blog-title shrink-center">
+              <%= post.title %>
+            </h1>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <article class="blog_post" id="<%= dom_id(post) %>">
+    
+      <section class='clearfix blog-teaser-container' style="text-align: justify;">
+        <%= blog_post_teaser(post) %>
+      </section>
+
+      <footer>
+        <p>
+          <% if blog_post_teaser_enabled?%>
+            <%= link_to refinery.blog_post_path(post), :class => "btn btn-primary"  do %>
+              <%= image_tag asset_path("eye.png"), :style => "position: relative; top: -1px;" %> READ POST
+            <% end %>
+          <% end %>
+        </p>
+      </footer>
+
+      <section class='row row-top-0 details'>
+
+        <% if @allow_author %>
+          <section class='col-md-<%= @column_count %> no-padding'>
+            <b>Author:</b>
+            <a target="_blank" href="<%= gplus_link(post)%>?rel=author"><%= author_name(post) %></a></a>
+          </section>
+        <% end %>
+
+        <section class='col-md-<%= @column_count %> no-padding'>
+          <b>Posted on:</b>
+          <%= post.published_at.strftime("%B %d, %Y") if post.published_at.present? %>
+        </section>
+
+        <section class='col-md-<%= @column_count %> no-padding'>
+          <b>Comments:</b>
+          <% comments = post.comments %>
+          <%= comments.any? ? "#{pluralize(comments.length, 'comment')}" : "No comments" %>
+        </section>
+
+        <section class='col-md-<%= @column_count %> no-padding'>
+          <b>Categories:</b>
+          <%= HtmlHelper.get_categories_html(post, refinery).html_safe %>
+        </section> 
+
+      </section>
+    </article>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<%= render 'layouts/analytics_scripts' %>
+<!DOCTYPE html>
+<html>
+  <%= render 'layouts/head' %>
+  <body class="blog_page">
+    <%= yield :body_analytics_scripts %>
+    <%= render "layouts/add_this_script" %>
+
+    <%= render 'layouts/navigation' %>
+
+    <main role="main">
+      <div class='main-container'>
+        <%= render 'layouts/messages' %>
+        
+        <div class="container blog-container no-padding">
+          <div class='row row-top-0 blog-content'>
+            <div class="col-md-10 col-md-offset-1 blogs">
+              <%= yield %>
+            </div>
+          </div>
+        </div>
+
+        <%= render 'layouts/footer' %>
+      </div>
+    </main>
+
+    <%= render "layouts/preloaded_data" %>
+  </body>
+</html>

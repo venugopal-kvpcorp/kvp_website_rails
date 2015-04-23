@@ -1,0 +1,12 @@
+<% if @post.persisted? %>
+  <div class='hemisquare right_side'>
+    <h2>Rich Snippet (Rating)</h2>
+      <div class='field'>
+        <span class='label_with_help'>
+          <%= f.label "Rating" %>
+          <%= refinery_help_tag "Rating (eg: 4.5/5)" %>
+        </span>
+        <%= f.text_field :rating, :placeholder => "Eg: 3, 4.5, 5" %>
+      </div>
+  </div>
+<% end %>

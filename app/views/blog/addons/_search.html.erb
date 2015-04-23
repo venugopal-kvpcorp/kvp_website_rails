@@ -1,0 +1,18 @@
+<div class="blog-div">
+	<h4 class="title">Search Blog</h4>
+  <br>
+	<%= form_tag refinery.search_path, :class => "row row-top-0" do %>
+		<div class="col-xs-10 no-padding">
+			<%= text_field_tag :query, {}, {:type => "search",
+	                     :class => "form-control search-field",
+	                     :value => (params[:query] if params[:query])} %>
+		</div>
+
+		<div class="col-xs-2 no-pad-right">
+			<button type="submit" class="btn btn-primary search-button">
+	    	Search
+	    </button>
+		</div>
+	  
+	<% end %>
+</div>

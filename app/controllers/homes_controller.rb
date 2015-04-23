@@ -5,4 +5,7 @@ class HomesController < ApplicationController
   def contact
   end
 
+  def career
+     
+  end
 end

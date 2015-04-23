@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body{
+      padding-top: 20px;
+    }
+  </style>
+  <body class="blog_page">
+    <%= yield :body_analytics_scripts %>
+
+
+    <%= raw PageTextHelper.get_text_value("static", "blog-hero") %>
+
+    <main role="main">
+      <div class='main-container'>
+        
+        <div class="container blog-container">
+          <div class='row row-top-0 blog-content'>
+            <div class="col-md-8 blogs">
+              <%= yield %>
+            </div>
+            <div class="col-md-4 no-padding">
+              <%= render "blog/addons/blog_subscription"  %>
+              <%= render "blog/addons/search" %>
+              <%= render "blog/addons/categories" %>
+              <%= render "blog/addons/recent_comments" %>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </body>
+</html>

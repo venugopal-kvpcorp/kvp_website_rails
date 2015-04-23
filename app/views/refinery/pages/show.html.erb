@@ -1,0 +1,20 @@
+<% @page.parts.order(:position).each do | page_part | %>  
+  <%= render inline: HTMLEntities.new.decode(@page.content_for(page_part.title.to_sym)) %>
+<% end %>
+
+<% if request.url.include? "contact-us" %>
+
+	<div class="visuallyhidden" itemscope itemtype="http://schema.org/Organization"> 
+	   <span itemprop="name">Harmoney</span> 
+	   Located at 
+	   <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+	      <span itemprop="streetAddress">Level 10, SAP Tower, 151 Queen Street, Auckland 1010</span>,
+	      <span itemprop="addressLocality">Auckland City</span>,
+	      <span itemprop="addressRegion">NZ</span>.
+	   </div>
+	  <img itemprop="logo" src="https://www.harmoney.com/assets/harmoney-logo.png" />
+	   Phone: <span itemprop="telephone">0800 HARMONEY  (427 666 39)</span>
+	   <a href="https://www.harmoney.com/" itemprop="url">https://www.harmoney.com/</a>
+	</div>
+
+<% end %>

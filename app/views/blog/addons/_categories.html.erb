@@ -1,0 +1,20 @@
+<div class="blog-div">
+
+	<h4 class="title">Categories</h4>
+	<% if @categories.any? %>
+
+	  <ul>
+	    <% @categories.each do |category| %>
+	      <li <%= " class='selected'" if @category.present? and @category.id == category.id %> >
+	        <%= link_to "#{fa_icon('angle-right')} #{category.title}".html_safe, refinery.blog_category_path(category), :class => "category-link" %>
+	      </li>
+	    <% end %>
+	    <li>
+	    	<%= link_to "#{fa_icon('angle-right')} Uncategorized".html_safe, refinery.blog_category_path("Uncategorized"), :class => "category-link" %>
+	    </li>
+	  </ul>
+
+	<% else %>
+		No categories yet.
+	<% end %>
+</div>

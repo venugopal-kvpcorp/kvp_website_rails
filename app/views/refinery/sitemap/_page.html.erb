@@ -1,0 +1,19 @@
+
+	  <% page_url = !page.blank? && ( page.url.is_a?(Hash) or page.url.is_a?(String) ) %>
+	  <% if page_url.present? and page.show_in_sitemap? %>
+		  <div class="col-xs-12 col-sm-6 col-md-3 col-sm-height col-bottom page-grid-box">
+		  	<div id="<%= dom_id(page) -%>">
+		
+		    
+		      <h4><%= link_to page.title,
+		                  page.url,
+		                  :title => t('.view_live_html'), :class => 'some-class' %></h4>
+		        
+		      
+		      <div class = "nested" data-ajax-content="<%= refinery.admin_children_pages_path(page.nested_url) %>">
+		        <%= render(:partial => 'subpage', :collection => page.children, :as => :item) if Refinery::Pages.auto_expand_admin_tree %>
+		      </div>
+		    </div>
+			<% if page.title == "Investors" || page.title == "How It Works" || page.title == "Legal Docs"%><p style="margin-top:30px"></p><% end %>
+		  </div>
+	  <% end %>

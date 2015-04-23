@@ -1,0 +1,5 @@
+<% @title = "Sitemap | Harmoney" %>
+
+<div class="container-fluid" style="padding-top: 80px;">
+	<%= render :partial => 'page', :collection => ::Refinery::Page.roots.in_sitemap  %>
+</div>

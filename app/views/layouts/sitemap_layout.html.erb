@@ -1,0 +1,65 @@
+<style>
+  .sub-nav-sitemap {
+  padding: 15px 0px;
+  background-color: #3f5564;
+	width: 100%;
+	height: 55px;
+  }
+</style>
+
+
+<%= render 'layouts/analytics_scripts' %>
+<!DOCTYPE html>
+<html>
+  <%= render 'layouts/head' %>
+  <body>
+    <%= yield :body_analytics_scripts %>
+
+    <div class="navbar navbar-default navbar-inverse navbar-fixed-top hm-navbar" role="navigation">
+	  <div class="navbar-header-container">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle clear-fix-top-20" data-toggle="collapse" data-target=".navbar-collapse">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a href="/" class="navbar-brand no-padding">
+	        <img src="<%= asset_path((params[:action] == "home") ? 'harmoney-logo-home.png' : 'harmoney-logo.png') %>" alt="Harmoney NZ" />
+	      </a>
+	    </div>
+	    <div class="navbar-collapse collapse">
+	      <ul class="nav navbar-nav navbar-right ">
+	      	<% Refinery::Page.base_pages.each do |page| %>
+			  <li class="<%= (page.slug == @current_page.try(:slug))? "active" : ""  %>">
+			  <%= link_to page.display_link_text, page.nested_path, :class => "tt-none" %>
+			  </li>
+			<% end %>
+			<li class="login-button">
+			  <div class="login-wrapper">
+			    <a href="<%= "#{ENV['HARMONEY_SIGN_IN_URL']}" %>" class="tt-none btn btn-primary">Login</a>
+			  </div>
+			</li>
+	      </ul>
+	    </div><!--/.nav-collapse -->
+	
+	  </div>
+	
+	  <div class="sub-nav-sitemap">
+	    <div class="container-fluid">      
+	    </div>
+  	  </div>
+    </div>
+
+    <main role="main">
+      <div class='main-container'>
+        <%= render 'layouts/messages' %>
+          <%= yield %>
+          <p></p><p></p>
+        <%= render 'layouts/footer' %>
+      </div>
+    </main>
+
+    <%= render "layouts/preloaded_data" %>
+  </body>
+</html>

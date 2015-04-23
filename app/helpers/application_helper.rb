@@ -1,7 +1,7 @@
 module ApplicationHelper
 
 	def is_contact?
-		if params[:controller] == "refinery/pages" && (params[:action] == "show" || params[:action] == "home") && !@page.blank? && @page.allow_repayment_widget == true
+		if params[:controller] == "homes" && (params[:action] == "contact")
 		  true
 		else
 		  false

@@ -1,0 +1,122 @@
+
+
+<!--
+	HTML with Open Graph attributes
+	<html class="no-js" lang="en-US" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
+-->
+
+
+
+
+		<!-- Page title -->
+		<section>
+			<div class="page-title">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-5 col-sm-5">
+							<h3>Contact</h3>
+						</div>
+					
+					</div>
+				</div>
+			</div>
+		</section> <!-- and Page title -->
+
+
+		<!-- Google map -->
+	    <div id="map"></div>
+		<!-- and Google map -->
+		
+		<!-- Contact -->
+		<section>
+			<div class="contact-classic">
+				<div class="container">
+					<div class="row">
+
+					
+						<div class="col-md-6 contact">
+							<!-- Contact form -->
+								<form class="contact-form" action="contact-form.php" method="post" name="contact_form" id="email_send_form">
+
+									<input name="name" class="your-label-contact" type="text" placeholder="Your name *">
+
+									<input name="email" class="your-label-contact" type="text" placeholder="Your Email *">
+
+									<input class="your-label-contact" type="text" placeholder="Subject">
+
+									<textarea  name="text" class="your-label-contact-text" placeholder="Message *"></textarea>
+
+									<p class="red-span">* - required </p>
+
+									<button type="submit" name="submit" class="button-green upp" id="send">send message</button> 
+
+									<div id="result"></div>
+								</form>
+								<!-- and Contact form -->						
+						</div>
+
+						<div class="col-md-6">
+							<span class="title">Share:</span>
+
+							<ul class="share">
+								<li><a href="https://www.facebook.com/pages/KVP-Business-Solutions/184345499708" target="_blank"><i class="fa fa-facebook"></i></a></li>
+								<!-- <li><a href=""><i class="fa fa-pinterest"></i></a></li> -->
+								<!-- <li><a href=""><i class="fa fa-google-plus"></i></a></li> -->
+								<li><a href="https://www.linkedin.com/company/kvp-business-solutions" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+								<li><a href="https://twitter.com/kvpcorp" target="_blank"><i class="fa fa-twitter"></i></a></li>
+							</ul>
+
+							<span class="title">Contact details:</span>
+
+							<p>Thank you for your interest in KVP Business Solutions. Please contact using the information below. For additional services offered information or office contacts, visit the appropriate page of our site.</p>
+
+							<span class="contact-adress">
+								<b>India Office address:</b> Crimson Court <br>
+								#4, 1st floor Jeevan Bhima Nagar Main Road <br> 
+								HAL 3rd Stage <br> 
+								Bangalore - 560 075 <br>
+								<b>Phone:</b> +91 - 80 - 40871908 <br>
+								<b>Fax:</b> +91 - 80 - 41741901 <br>
+								<b>Email:</b>  info@kvpcorp.com  <br>
+							</span>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- and Contact -->
+
+
+
+	<!-- Google map -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+    <script>
+	    function initialize() {
+	        var myLatlng = new google.maps.LatLng(12.967664,77.653964);
+	        var mapOptions = {
+	          zoom: 20,
+	          center: myLatlng,
+	          mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
+	        }
+	        var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+	        var companyLogo = new google.maps.MarkerImage('assets/img/pointer.png',
+	        new google.maps.Size(83,137),
+	        new google.maps.Point(0,0),
+	        new google.maps.Point(05,48)
+	        );
+
+	        var marker = new google.maps.Marker({
+	            position: myLatlng,
+	            map: map,
+	            icon: companyLogo,
+	            title: 'All in one'
+	        });
+	      }
+
+	    google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+    <!-- and Google map -->
+
+

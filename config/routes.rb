@@ -77,10 +77,37 @@ NewTest::Application.routes.draw do
 
   #######################
 
-
-  match '/homes/contact', :to => 'homes#contact'
+  
+  match '/contact_us', :to => 'homes#contact'
 
   match '/index', :to => 'homes#index'
+
+  match '/services', :to => 'static_pages#services', :via => [:get]
+
+  match '/technologies', :to => "static_pages#technologies", :via => [:get]
+
+  match '/manufacturing', :to => 'static_pages#manufacturing', :via => [:get]
+
+  match '/financial_services', :to => "static_pages#financial_services", :via => [:get]
+
+  match '/technology', :to => "static_pages#industry_technology", :via => [:get]
+
+  match '/life_sciences', :to => "static_pages#life_sciences", :via => [:get]
+
+  match '/real_estates', :to => "static_pages#real_estates", :via => [:get]
+
+  match '/about_us', :to => 'static_pages#about_us', :via => [:get]
+
+  match '/team', :to => "static_pages#team", :via => [:get]
+
+  match '/passion_to_action', :to => "static_pages#passion_to_action", :via => [:get]
+
+  match '/heritage', :to => "static_pages#heritage", :via => [:get]
+
+  match '/award', :to => "static_pages#award", :via => [:get]
+
+  match '/careers', :to => "static_pages#careers", :via => [:get]
+
 
 
   mount Refinery::Core::Engine, :at => '/'

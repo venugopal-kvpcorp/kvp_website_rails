@@ -1,0 +1,13 @@
+<% if Refinery::Pages.use_layout_templates %>
+  <div class='field'>
+    <!-- CONVERT TO FORM FOR -->
+    <span class='label_with_help'>
+      Layout Template
+    </span>
+    <form method="get" action="<%= refinery.new_admin_page_path %>">
+      <%= select_tag :layout_template, options_for_select(@valid_layout_templates) %>
+
+      <button type="submit">Add page</button>
+    </form>
+  </div>
+<% end %>

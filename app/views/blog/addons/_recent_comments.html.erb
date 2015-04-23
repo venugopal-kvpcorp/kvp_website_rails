@@ -1,0 +1,19 @@
+<div class="blog-div">
+
+	<h4 class="title">Recent Comments</h4>
+
+	<% @comments = Refinery::Blog::Comment.order('created_at DESC') %>
+
+	<% if @comments.any? %>
+		<ul>
+			<% @comments.each do | comment | %>
+				<li>
+					<b><%= comment.name.capitalize %> on</b><a href='<%= refinery.blog_post_path(comment.post) %>#comments'><%= comment.post.title. html_safe %></a>
+	      </li>
+			<% end %>
+		</ul>
+	<% else %>
+		No comments yet.
+	<% end %>
+
+</div>
