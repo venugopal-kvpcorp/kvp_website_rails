@@ -402,7 +402,7 @@ GEM
       rspec-support (~> 3.2.0)
     rspec-support (3.2.2)
     safe_yaml (1.0.4)
-    sass (3.4.13)
+    sass (3.2.19)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
@@ -517,8 +517,8 @@ DEPENDENCIES
   restforce
   rspec-rails
   ruby-pardot!
-  sass
-  sass-rails (~> 3.2.3)
+  sass (~> 3.2.5)
+  sass-rails
   savon (~> 2.0.2)
   sidekiq (= 2.17.7)
   simple_captcha2
