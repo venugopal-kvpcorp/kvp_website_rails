@@ -1,1 +1,51 @@
-.text-align-left{text-align:left}.text-align-center{text-align:center}.text-align-right{text-align:right}.text-align-justify{text-align:justify}.image-align-left{float:left;margin-right:6px;margin-bottom:6px}.image-align-right{float:right;margin-left:6px;margin-bottom:6px}.font-size-small{font-size:0.75em}.font-size-normal{font-size:1em}.font-size-large{font-size:1.25em}
+/* alignment styles */
+/* line 3, ../../../../../.rvm/gems/ruby-2.1.5/gems/refinerycms-core-2.1.5/app/assets/stylesheets/refinery/theme.css.scss */
+.text-align-left {
+  text-align: left;
+}
+
+/* line 6, ../../../../../.rvm/gems/ruby-2.1.5/gems/refinerycms-core-2.1.5/app/assets/stylesheets/refinery/theme.css.scss */
+.text-align-center {
+  text-align: center;
+}
+
+/* line 9, ../../../../../.rvm/gems/ruby-2.1.5/gems/refinerycms-core-2.1.5/app/assets/stylesheets/refinery/theme.css.scss */
+.text-align-right {
+  text-align: right;
+}
+
+/* line 12, ../../../../../.rvm/gems/ruby-2.1.5/gems/refinerycms-core-2.1.5/app/assets/stylesheets/refinery/theme.css.scss */
+.text-align-justify {
+  text-align: justify;
+}
+
+/* block alignment styles */
+/* line 17, ../../../../../.rvm/gems/ruby-2.1.5/gems/refinerycms-core-2.1.5/app/assets/stylesheets/refinery/theme.css.scss */
+.image-align-left {
+  float: left;
+  margin-right: 6px;
+  margin-bottom: 6px;
+}
+
+/* line 22, ../../../../../.rvm/gems/ruby-2.1.5/gems/refinerycms-core-2.1.5/app/assets/stylesheets/refinery/theme.css.scss */
+.image-align-right {
+  float: right;
+  margin-left: 6px;
+  margin-bottom: 6px;
+}
+
+/* font sizes */
+/* line 29, ../../../../../.rvm/gems/ruby-2.1.5/gems/refinerycms-core-2.1.5/app/assets/stylesheets/refinery/theme.css.scss */
+.font-size-small {
+  font-size: 0.75em;
+}
+
+/* line 32, ../../../../../.rvm/gems/ruby-2.1.5/gems/refinerycms-core-2.1.5/app/assets/stylesheets/refinery/theme.css.scss */
+.font-size-normal {
+  font-size: 1em;
+}
+
+/* line 35, ../../../../../.rvm/gems/ruby-2.1.5/gems/refinerycms-core-2.1.5/app/assets/stylesheets/refinery/theme.css.scss */
+.font-size-large {
+  font-size: 1.25em;
+}

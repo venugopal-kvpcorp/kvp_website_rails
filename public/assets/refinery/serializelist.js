@@ -12,4 +12,58 @@
  *
  * http://github.com/botskonet/jquery.serialize-list
  */
-!function(e){e.fn.serializelist=function(t){var r,n,i,a={attributes:["id"],allow_nest:!0,prepend:"ul",att_regex:!1,is_child:!1},l=e.extend(a,t),s=l.attributes,c="",d=function(e,t){if(!l.att_regex)return t;for(n in l.att_regex)if(l.att_regex[n].att===e)return t.replace(l.att_regex[n].regex,"")};return l.is_child||(l.prepend="&"+l.prepend),this.each(function(t,n){e(n).children().each(function(n,a){if(l.allow_nest||s.length>1)for(var h=0;h<s.length;h++)r=d(s[h],e(a).attr(s[h])),c+=l.prepend+"["+t+"]["+n+"]["+s[h]+"]="+r;else r=d(s[0],e(a).attr(s[0])),c+=l.prepend+"["+t+"]["+n+"]="+r;l.allow_nest&&(i=l.prepend+"["+t+"]["+n+"][children]",e(a).children().each(function(){("UL"==this.tagName||"OL"==this.tagName)&&(c+=e(this).serializelist({prepend:i,is_child:!0}))})),n++})}),c}}(jQuery);
+
+(function($) {
+  $.fn.serializelist = function(options) {
+    var defaults = {
+        attributes: ['id'],
+        allow_nest: true,
+        prepend: 'ul',
+        att_regex: false,
+        is_child: false
+      },
+      opts = $.extend(defaults, options),
+      attrs = opts.attributes,
+      serialStr = '',
+      val, x, att, child_base;
+
+    var att_rep = function(att, val) {
+      if(!opts.att_regex) { return val; }
+
+			for(x in opts.att_regex) {
+				if(opts.att_regex[x].att === att) {
+					return val.replace(opts.att_regex[x].regex, '');
+				}
+			}
+		};
+
+    if(!opts.is_child) { opts.prepend = '&' + opts.prepend; }
+
+    this.each(function(ul_count, ul) {
+      $(ul).children().each(function(li_count, li) {
+    		if(opts.allow_nest || attrs.length > 1) {
+    			for(var i = 0; i < attrs.length; i++) {
+    				val = att_rep(attrs[i], $(li).attr(attrs[i]));
+    				serialStr += opts.prepend+'['+ul_count+']['+li_count+']['+attrs[i]+']='+val;
+    			}
+    		} else {
+    			val = att_rep(attrs[0], $(li).attr(attrs[0]));
+    			serialStr += opts.prepend+'['+ul_count+']['+li_count+']='+val;
+    		}
+
+    		if(opts.allow_nest) {
+    			child_base = opts.prepend+'['+ul_count+']['+li_count+'][children]';
+    			$(li).children().each(function() {
+    				if(this.tagName == 'UL' || this.tagName == 'OL') {
+    					serialStr += $(this).serializelist({'prepend': child_base, 'is_child': true});
+    				}
+    			});
+    		}
+
+        li_count++;
+      });
+    });
+
+    return(serialStr);
+  };
+})(jQuery);
