@@ -1,7 +1,7 @@
 module Refinery
   class PagesController < ::ApplicationController
     include Pages::RenderOptions
-    include WebServices::AccountApi
+    # include WebServices::AccountApi
 
     before_filter :find_page, :set_canonical
     before_filter :error_404, :unless => :current_user_can_view_page?

@@ -186,7 +186,7 @@ ActiveRecord::Schema.define(:version => 20141017104413) do
     t.datetime "updated_at",                                :null => false
     t.boolean  "show_in_navigation",     :default => false
     t.string   "display_link_text"
-    t.integer  "priority",               :default => 0
+    t.integer  "priority",               :default => 0,     :null => false
     t.text     "meta_keywords"
     t.integer  "image_id"
     t.boolean  "show_in_sitemap",        :default => true
