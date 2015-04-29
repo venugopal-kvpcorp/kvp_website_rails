@@ -6,6 +6,10 @@ module ApplicationHelper
 		else
 		  false
 		end
-     end		
+     end	
+
+     def author_name(post)
+      post.author.name.presence || "admin"
+    end	
 
 end

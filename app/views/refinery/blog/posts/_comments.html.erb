@@ -1,36 +1,51 @@
+<hr class="light-grey"/>
 <aside id="comments">
   <% if (comments = @post.comments.approved).any? %>
-    <h2><%= t('title', :scope => 'refinery.blog.posts.show.comments') %></h2>  
+    <h2>
+      <%= image_tag asset_path("comment.png") %>&nbsp;&nbsp;<%= comments.count %> COMMENTS
+    </h2>
     <%= render :partial => "comment", :collection => comments %>
   <% end %>
 
   <% if Refinery::Blog::Post.comments_allowed? %>
 
-    <% flash.each do |key, value| %>
-      <div id='flash' class="flash flash_<%= key %>">
-        <%= value %>
-      </div>
-    <% end %>
-
-    <h2><%= t('add', :scope => 'refinery.blog.posts.show.comments') %></h2>
+    <h4>
+      <%= image_tag "comment-icon.png" %>
+      <b>Leave a reply</b>
+    </h4>
+    <p>Your email address will not be published. Required fields are marked *</p>
     <%= form_for [refinery, :blog, @comment] do |f| %>
+      <div class="row row-top-0 comment-group">
+        <div class='field col-md-5 padding-0'>
+          <%= f.label "Name *" %>
+          <%= f.text_field :name, :style => "width: 94%;" %>
+        </div>
+        <div class='field col-md-5 padding-0'>
+          <%= f.label "Email *" %>
+          <%= f.email_field :email, :style => "width: 94%;" %>
+        </div>
+      </div>
+      <p></p>
+      <div class="row row-top-0 comment-group">
+        <div class='field message_field col-md-12 padding-0'>
+          <%= f.label :comment %>
+          <%= f.text_area :message, :rows => 6, :class => "full-wide" %>
+        </div>
+      </div>
+      <div class="row row-top-0 comment-group">
+        <div class="col-md-12 padding-0">
+          <p class="no-margin padding-bottom-0">You may use these HTML tags and attributes:</p>
+          <%= text_field_tag :helper, '<a href="" title=""> <abbr title=""> <acronym title=""> <b> <blockquote cite=""> <cite> <code> <del datetime=""> <em> <i> <q cite=""> <strike> <strong>', :readonly => true, :class => "full-wide helper-text" %>
+        </div>
+      </div>
+
       <%= render "/refinery/admin/error_messages",
                  :object => f.object,
                  :include_object_name => true %>
-      <div class='field'>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-      </div>
-      <div class='field'>
-        <%= f.label :email %>
-        <%= f.email_field :email %>
-      </div>
-      <div class='field message_field'>
-        <%= f.label :message %>
-        <%= f.text_area :message, :rows => 6 %>
-      </div>
+
+      <p></p>
       <div class='field form-actions'>
-        <%= f.submit t('submit', :scope => 'refinery.blog.posts.show') %>
+        <%= f.submit t('submit', :scope => 'refinery.blog.posts.show'), :class => "btn btn-primary" %>
       </div>
     <% end %>
   <% end %>

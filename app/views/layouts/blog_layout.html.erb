@@ -3,15 +3,16 @@
   <%= render 'layouts/head' %>
   <style>
     body{
-      padding-top: 20px;
+      padding-top: 120px;
     }
   </style>
   <body class="blog_page">
+      <%= render 'layouts/header' %>
     <%= yield :body_analytics_scripts %>
-    <%= render 'layouts/header' %>
 
 
-    <%= raw PageTextHelper.get_text_value("static", "blog-hero") %>
+
+    <%#= raw PageTextHelper.get_text_value("static", "blog-hero") %>
 
     <main role="main">
       <div class='main-container'>

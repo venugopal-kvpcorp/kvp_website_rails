@@ -4,7 +4,7 @@
   class_attr1,class_attr2 = "col-md-4 no-padding", "col-md-8"
   end %>
 <% if post.live? %>
-  <div>
+  <div class="<%= !@blog_div_set ? "blog-div" : "" %>">
     <header>
       <div class="row row-top-0">
         <div class="<%= class_attr1 %>">
@@ -69,7 +69,7 @@
         <section class='col-md-<%= @column_count %> no-padding'>
           <b>Categories:</b>
           <%= HtmlHelper.get_categories_html(post, refinery).html_safe %>
-        </section> 
+        </section>
 
       </section>
     </article>
