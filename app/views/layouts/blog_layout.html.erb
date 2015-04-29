@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <%= render 'layouts/head' %>
   <style>
     body{
       padding-top: 20px;
@@ -7,13 +8,13 @@
   </style>
   <body class="blog_page">
     <%= yield :body_analytics_scripts %>
+    <%= render 'layouts/header' %>
 
 
     <%= raw PageTextHelper.get_text_value("static", "blog-hero") %>
 
     <main role="main">
       <div class='main-container'>
-        
         <div class="container blog-container">
           <div class='row row-top-0 blog-content'>
             <div class="col-md-8 blogs">
@@ -27,6 +28,7 @@
             </div>
           </div>
         </div>
+        <%= render 'layouts/footer' %>
 
       </div>
     </main>
