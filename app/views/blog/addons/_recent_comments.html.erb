@@ -2,7 +2,7 @@
 
 	<h4 class="title">Recent Comments</h4>
 
-	<% @comments = Refinery::Blog::Comment.where(state: "approved").order('created_at DESC') %>
+	<% @comments = Refinery::Blog::Comment.order('created_at DESC') %>
 
 	<% if @comments.any? %>
 		<ul>
